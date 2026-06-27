@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Masa Stores</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
-body{background:#f4f5f7;color:#1a1a1a}a{text-decoration:none;color:inherit}
+body{background:#f4f5f7;color:#1a1a1a}
+a{text-decoration:none;color:inherit}
 .topstrip{background:#1a1a1a;color:#f0a500;font-size:13px;padding:7px 24px;text-align:center}
 .mainbar{background:#fff;border-bottom:2px solid #f0a500;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .mainbar-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:12px 24px}
@@ -15,54 +15,70 @@ body{background:#f4f5f7;color:#1a1a1a}a{text-decoration:none;color:inherit}
 .search{flex:1;display:flex;background:#f4f5f7;border:1.5px solid #e0e0e0;border-radius:10px;overflow:hidden;transition:.2s}
 .search:focus-within{border-color:#f0a500;background:#fff}
 .search input{flex:1;border:0;background:transparent;padding:11px 16px;font-size:14px;outline:none;font-family:inherit}
-.search button{border:0;background:#f0a500;color:#fff;padding:0 20px;font-size:20px;cursor:pointer}
-.search button:hover{background:#d4920a}
-.topicons{display:flex;gap:20px;font-size:23px}
-.topicons i{cursor:pointer;transition:.2s}.topicons i:hover{color:#f0a500}
+.search button{border:0;background:#f0a500;color:#fff;padding:0 20px;font-size:18px;cursor:pointer}
+.topicons{display:flex;gap:20px;font-size:22px}
+.topicons span{cursor:pointer}
 .catnav{background:#1a1a1a;overflow-x:auto;white-space:nowrap}
-.catnav::-webkit-scrollbar{height:3px}.catnav::-webkit-scrollbar-thumb{background:#f0a500}
+.catnav::-webkit-scrollbar{height:3px}
+.catnav::-webkit-scrollbar-thumb{background:#f0a500}
 .catnav .inner{max-width:1280px;margin:0 auto;display:flex}
-.catnav a{color:#ccc;padding:13px 16px;font-size:13px;display:inline-flex;align-items:center;gap:5px;transition:.2s;border-bottom:3px solid transparent}
+.catnav a{color:#ccc;padding:13px 14px;font-size:13px;display:inline-flex;align-items:center;gap:4px;transition:.2s;border-bottom:3px solid transparent}
 .catnav a:hover{color:#f0a500;background:#252525;border-bottom-color:#f0a500}
 .herowrap{max-width:1280px;margin:24px auto 0;padding:0 24px}
-.herobox{background:#1a1a1a;border-radius:16px;padding:42px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden}
+.herobox{background:#1a1a1a;border-radius:16px;padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden}
 .herobox::after{content:'';position:absolute;left:-60px;top:-60px;width:260px;height:260px;background:radial-gradient(circle,#f0a500 0%,transparent 70%);opacity:.12}
-.hero-text h1{font-size:32px;color:#fff;line-height:1.3;margin-bottom:10px}
-.hero-text h1 span{color:#f0a500}.hero-text p{color:#999;font-size:15px}
+.hero-text h1{font-size:30px;color:#fff;line-height:1.35;margin-bottom:10px}
+.hero-text h1 span{color:#f0a500}
+.hero-text p{color:#999;font-size:14px}
 .hero-logo{height:90px;opacity:.9}
 .wrap{max-width:1280px;margin:0 auto;padding:0 24px 60px}
 .catsec{margin-top:42px}
 .new-cat{background:#fffdf7;border:1.5px dashed #f0a500;border-radius:16px;padding:20px;margin-top:42px}
 .cathead{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #f0a500}
-.cat-icon{font-size:22px}.cathead h2{font-size:19px;font-weight:700;color:#1a1a1a}
+.cat-icon{font-size:22px}
+.cathead h2{font-size:18px;font-weight:700;color:#1a1a1a}
 .catar{font-size:13px;color:#888}
 .new-badge{background:#f0a500;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
-.seeall{margin-right:auto;color:#f0a500;font-size:13px;font-weight:600;display:flex;align-items:center;gap:3px;padding:6px 14px;border:1.5px solid #f0a500;border-radius:20px;transition:.2s}
+.seeall{margin-right:auto;color:#f0a500;font-size:13px;font-weight:600;padding:5px 13px;border:1.5px solid #f0a500;border-radius:20px;transition:.2s}
 .seeall:hover{background:#f0a500;color:#fff}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:16px}
 .card{background:#fff;border:1.5px solid #eee;border-radius:14px;overflow:hidden;transition:.25s;display:flex;flex-direction:column;cursor:pointer}
 .card:hover{box-shadow:0 8px 28px rgba(240,165,0,.18);transform:translateY(-4px);border-color:#f0a500}
-.thumb{height:130px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:52px;transition:.2s}
+.thumb{height:130px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:50px;transition:.2s}
 .card:hover .thumb{background:#fff8ec}
 .cbody{padding:12px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .pname{font-size:12px;line-height:1.55;color:#333;height:38px;overflow:hidden;direction:ltr;text-align:left}
 .prow{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;border-top:1px solid #f4f5f7}
-.price{font-size:16px;font-weight:700;color:#1a1a1a}.cur{font-size:11px;font-weight:400;color:#999}
-.add{background:#1a1a1a;color:#fff;border:0;width:34px;height:34px;border-radius:8px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
-.add:hover{background:#f0a500;color:#fff}
-footer{background:#1a1a1a;color:#888;padding:32px 24px;margin-top:40px}
+.price{font-size:16px;font-weight:700;color:#1a1a1a}
+.cur{font-size:11px;font-weight:400;color:#999}
+.add{background:#1a1a1a;color:#fff;border:0;width:34px;height:34px;border-radius:8px;font-size:20px;cursor:pointer;transition:.2s}
+.add:hover{background:#f0a500}
+footer{background:#1a1a1a;color:#888;padding:28px 24px;margin-top:40px}
 .foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.foot-logo img{height:44px;opacity:.8}.foot-copy{font-size:13px}.foot-copy span{color:#f0a500}
+.foot-logo img{height:44px;opacity:.8}
+.foot-copy{font-size:13px}
+.foot-copy span{color:#f0a500}
 </style>
 </head>
 <body>
+
 <div class="topstrip">🚚 شحن سريع لكل المحافظات &nbsp;|&nbsp; الدفع عند الاستلام متاح &nbsp;|&nbsp; ضمان على جميع المنتجات</div>
+
 <div class="mainbar"><div class="mainbar-inner">
   <a href="#"><div class="logo"><img src="logo.png" alt="Al Masa Stores"></div></a>
-  <div class="search"><input placeholder="ابحث في Al Masa Stores..."><button><i class="ti ti-search"></i></button></div>
-  <div class="topicons"><i class="ti ti-heart"></i><i class="ti ti-user"></i><i class="ti ti-shopping-cart"></i></div>
+  <div class="search">
+    <input placeholder="ابحث في Al Masa Stores...">
+    <button>🔍</button>
+  </div>
+  <div class="topicons">
+    <span title="المفضلة">🤍</span>
+    <span title="حسابي">👤</span>
+    <span title="السلة">🛒</span>
+  </div>
 </div></div>
-<nav class="catnav"><div class="inner"><a href="#cat0">🖱️&nbsp;Computer Accessories</a><a href="#cat1">🎧&nbsp;Audio & Sound</a><a href="#cat2">🎮&nbsp;Gaming</a><a href="#cat3">📱&nbsp;Mobile Accessories</a><a href="#cat4">🔌&nbsp;Cables & Converters</a><a href="#cat5">🔋&nbsp;Power & Charging</a><a href="#cat6">📶&nbsp;Network</a><a href="#cat7">📷&nbsp;WiFi Cameras</a><a href="#cat8">💾&nbsp;Storage & Memory</a><a href="#cat9">🎒&nbsp;Bags</a><a href="#cat10">🧾&nbsp;POS</a><a href="#cat11">📺&nbsp;TV & Receivers</a><a href="#cat12">🖨️&nbsp;Printers & Supplies</a></div></nav>
+
+<nav class="catnav"><div class="inner"><a href="#cat0">🖱️ Computer Accessories</a><a href="#cat1">🎧 Audio & Sound</a><a href="#cat2">🎮 Gaming</a><a href="#cat3">📱 Mobile Accessories</a><a href="#cat4">🔌 Cables & Converters</a><a href="#cat5">🔋 Power & Charging</a><a href="#cat6">📶 Network</a><a href="#cat7">📷 WiFi Cameras</a><a href="#cat8">💾 Storage & Memory</a><a href="#cat9">🎒 Bags</a><a href="#cat10">🧾 POS</a><a href="#cat11">📺 TV & Receivers</a><a href="#cat12">🖨️ Printers & Supplies</a></div></nav>
+
 <div class="herowrap"><div class="herobox">
   <div class="hero-text">
     <h1>كل اللي بيتك محتاجه<br>من <span>إلكترونيات</span></h1>
@@ -70,1045 +86,1074 @@ footer{background:#1a1a1a;color:#888;padding:32px 24px;margin-top:40px}
   </div>
   <img class="hero-logo" src="logo.png" alt="Al Masa Stores">
 </div></div>
+
 <div class="wrap"><section id="cat0" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🖱️</span>
-        <h2>Computer Accessories</h2><span class="catar">— ملحقات الكمبيوتر</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Computer Accessories</h2>
+        <span class="catar">— ملحقات الكمبيوتر</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="Hub_USB 3_4 Port">Hub_USB 3_4 Port</p>
-            <div class="prow">
-              <span class="price">1,100 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="Hub_USB_4 Port_Normal">Hub_USB_4 Port_Normal</p>
-            <div class="prow">
-              <span class="price">1,075 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="Hub_USB_7 Port">Hub_USB_7 Port</p>
-            <div class="prow">
-              <span class="price">1,350 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="Hub_USB_7 Port + Adapter">Hub_USB_7 Port + Adapter</p>
-            <div class="prow">
-              <span class="price">1,400 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD_Gel_USB">KEYBOARD_Gel_USB</p>
-            <div class="prow">
-              <span class="price">1,050 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD10B_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD10B_Tablat_USB</p>
-            <div class="prow">
-              <span class="price">2,125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD11A_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD11A_Tablat_USB</p>
-            <div class="prow">
-              <span class="price">2,125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖱️</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD11B_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD11B_Tablat_USB</p>
-            <div class="prow">
-              <span class="price">2,150 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="Hub_USB 3_4 Port">Hub_USB 3_4 Port</p>
+        <div class="prow">
+          <span class="price">1,100 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="Hub_USB_4 Port_Normal">Hub_USB_4 Port_Normal</p>
+        <div class="prow">
+          <span class="price">1,075 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="Hub_USB_7 Port">Hub_USB_7 Port</p>
+        <div class="prow">
+          <span class="price">1,350 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="Hub_USB_7 Port + Adapter">Hub_USB_7 Port + Adapter</p>
+        <div class="prow">
+          <span class="price">1,400 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD_Gel_USB">KEYBOARD_Gel_USB</p>
+        <div class="prow">
+          <span class="price">1,050 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD10B_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD10B_Tablat_USB</p>
+        <div class="prow">
+          <span class="price">2,125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD11A_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD11A_Tablat_USB</p>
+        <div class="prow">
+          <span class="price">2,125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖱️</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD_Lavvento_KEYBOARD11B_Tablat_USB">KEYBOARD_Lavvento_KEYBOARD11B_Tablat_USB</p>
+        <div class="prow">
+          <span class="price">2,150 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat1" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🎧</span>
-        <h2>Audio & Sound</h2><span class="catar">— صوتيات وسماعات</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Audio & Sound</h2>
+        <span class="catar">— صوتيات وسماعات</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_EXTRA_Bluetooth_TM-014">HEAD PHONE_EXTRA_Bluetooth_TM-014</p>
-            <div class="prow">
-              <span class="price">1,425 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_EXTRA_Bluetooth_TM-36">HEAD PHONE_EXTRA_Bluetooth_TM-36</p>
-            <div class="prow">
-              <span class="price">325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_HY-Global_W-280">HEAD PHONE_HY-Global_W-280</p>
-            <div class="prow">
-              <span class="price">1,850 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_LAvvento_HP-06A">HEAD PHONE_LAvvento_HP-06A</p>
-            <div class="prow">
-              <span class="price">1,950 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_Lavvento_HP-07N_Bluetooth">HEAD PHONE_Lavvento_HP-07N_Bluetooth</p>
-            <div class="prow">
-              <span class="price">2,225 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_Lavvento_HP-245">HEAD PHONE_Lavvento_HP-245</p>
-            <div class="prow">
-              <span class="price">200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_Marvo_HP118_Bluetooth">HEAD PHONE_Marvo_HP118_Bluetooth</p>
-            <div class="prow">
-              <span class="price">1,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎧</div>
-          <div class="cbody">
-            <p class="pname" title="HEAD PHONE_Marvo_HP-87B_HP -013_Bluetooth">HEAD PHONE_Marvo_HP-87B_HP -013_Bluetooth</p>
-            <div class="prow">
-              <span class="price">1,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_EXTRA_Bluetooth_TM-014">HEAD PHONE_EXTRA_Bluetooth_TM-014</p>
+        <div class="prow">
+          <span class="price">1,425 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_EXTRA_Bluetooth_TM-36">HEAD PHONE_EXTRA_Bluetooth_TM-36</p>
+        <div class="prow">
+          <span class="price">325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_HY-Global_W-280">HEAD PHONE_HY-Global_W-280</p>
+        <div class="prow">
+          <span class="price">1,850 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_LAvvento_HP-06A">HEAD PHONE_LAvvento_HP-06A</p>
+        <div class="prow">
+          <span class="price">1,950 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_Lavvento_HP-07N_Bluetooth">HEAD PHONE_Lavvento_HP-07N_Bluetooth</p>
+        <div class="prow">
+          <span class="price">2,225 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_Lavvento_HP-245">HEAD PHONE_Lavvento_HP-245</p>
+        <div class="prow">
+          <span class="price">200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_Marvo_HP118_Bluetooth">HEAD PHONE_Marvo_HP118_Bluetooth</p>
+        <div class="prow">
+          <span class="price">1,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎧</div>
+      <div class="cbody">
+        <p class="pname" title="HEAD PHONE_Marvo_HP-87B_HP -013_Bluetooth">HEAD PHONE_Marvo_HP-87B_HP -013_Bluetooth</p>
+        <div class="prow">
+          <span class="price">1,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat2" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🎮</span>
-        <h2>Gaming</h2><span class="catar">— الألعاب</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Gaming</h2>
+        <span class="catar">— الألعاب</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Game Pad_2B_GP-094_Single_USB_With_Touch_PS3+ PS4">Game Pad_2B_GP-094_Single_USB_With_Touch_PS3+ PS4</p>
-            <div class="prow">
-              <span class="price">1,275 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Game Pad_Double_Normal">Game Pad_Double_Normal</p>
-            <div class="prow">
-              <span class="price">800 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Game Pad_Double_Vib">Game Pad_Double_Vib</p>
-            <div class="prow">
-              <span class="price">1,600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Game Pad_E Train_GP-002_Single-Vib_USB">Game Pad_E Train_GP-002_Single-Vib_USB</p>
-            <div class="prow">
-              <span class="price">1,325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Game Pad_ZERO-7501_Single-Wirless-Vib-Colors_كارتون">Game Pad_ZERO-7501_Single-Wirless-Vib-Colors_كارتون</p>
-            <div class="prow">
-              <span class="price">175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD_Pravix_Full MM_Gaming_USB + PS2">KEYBOARD_Pravix_Full MM_Gaming_USB + PS2</p>
-            <div class="prow">
-              <span class="price">500 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="KEYBOARD+Mouse_Atick_KEYBOARD-3300_Wirless">KEYBOARD+Mouse_Atick_KEYBOARD-3300_Wirless</p>
-            <div class="prow">
-              <span class="price">250 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎮</div>
-          <div class="cbody">
-            <p class="pname" title="Mouse_Atick_M-900_Gaming_USB">Mouse_Atick_M-900_Gaming_USB</p>
-            <div class="prow">
-              <span class="price">1,800 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Game Pad_2B_GP-094_Single_USB_With_Touch_PS3+ PS4">Game Pad_2B_GP-094_Single_USB_With_Touch_PS3+ PS4</p>
+        <div class="prow">
+          <span class="price">1,275 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Game Pad_Double_Normal">Game Pad_Double_Normal</p>
+        <div class="prow">
+          <span class="price">800 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Game Pad_Double_Vib">Game Pad_Double_Vib</p>
+        <div class="prow">
+          <span class="price">1,600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Game Pad_E Train_GP-002_Single-Vib_USB">Game Pad_E Train_GP-002_Single-Vib_USB</p>
+        <div class="prow">
+          <span class="price">1,325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Game Pad_ZERO-7501_Single-Wirless-Vib-Colors_كارتون">Game Pad_ZERO-7501_Single-Wirless-Vib-Colors_كارتون</p>
+        <div class="prow">
+          <span class="price">175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD_Pravix_Full MM_Gaming_USB + PS2">KEYBOARD_Pravix_Full MM_Gaming_USB + PS2</p>
+        <div class="prow">
+          <span class="price">500 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="KEYBOARD+Mouse_Atick_KEYBOARD-3300_Wirless">KEYBOARD+Mouse_Atick_KEYBOARD-3300_Wirless</p>
+        <div class="prow">
+          <span class="price">250 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎮</div>
+      <div class="cbody">
+        <p class="pname" title="Mouse_Atick_M-900_Gaming_USB">Mouse_Atick_M-900_Gaming_USB</p>
+        <div class="prow">
+          <span class="price">1,800 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat3" class="catsec new-cat">
       <div class="cathead">
         <span class="cat-icon">📱</span>
-        <h2>Mobile Accessories</h2><span class="catar">— ملحقات الموبايل</span><span class="new-badge">New</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Mobile Accessories</h2>
+        <span class="catar">— ملحقات الموبايل</span>
+        <span class="new-badge">New</span>
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Car Phone Holder_Black_JR-OK2">Joyroom_Car Phone Holder_Black_JR-OK2</p>
-            <div class="prow">
-              <span class="price">1,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Car Phone Holder_Black_JR-OK3">Joyroom_Car Phone Holder_Black_JR-OK3</p>
-            <div class="prow">
-              <span class="price">1,200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Fast Charging Data Cable_Type-c To Type-c_60W_1.2M_Black_S-A14">Joyroom_Fast Charging Data Cable_Type-c To Type-c_60W_1.2M_Black_S-A14</p>
-            <div class="prow">
-              <span class="price">175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Fast Charging Data Cable_Type-c TO Lightning_30W_1.2M_Black_S-A14">Joyroom_Fast Charging Data Cable_Type-c TO Lightning_30W_1.2M_Black_S-A14</p>
-            <div class="prow">
-              <span class="price">1,800 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Power Bank_22.5W  Magnetic_10000mAh_With Ring Holder _Black_JR-PBM12">Joyroom_Power Bank_22.5W  Magnetic_10000mAh_With Ring Holder _Black_JR-PBM12</p>
-            <div class="prow">
-              <span class="price">1,600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Mobile_Lavvento_Dual USB_MP106_Black">Charger Mobile_Lavvento_Dual USB_MP106_Black</p>
-            <div class="prow">
-              <span class="price">1,125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Mobile_Lavvento_Type C_MP467">Charger Mobile_Lavvento_Type C_MP467</p>
-            <div class="prow">
-              <span class="price">1,600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📱</div>
-          <div class="cbody">
-            <p class="pname" title="Joyroom_Earphones_Type-c wired_White_JR-EC05">Joyroom_Earphones_Type-c wired_White_JR-EC05</p>
-            <div class="prow">
-              <span class="price">325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Car Phone Holder_Black_JR-OK2">Joyroom_Car Phone Holder_Black_JR-OK2</p>
+        <div class="prow">
+          <span class="price">1,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Car Phone Holder_Black_JR-OK3">Joyroom_Car Phone Holder_Black_JR-OK3</p>
+        <div class="prow">
+          <span class="price">1,200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Fast Charging Data Cable_Type-c To Type-c_60W_1.2M_Black_S-A14">Joyroom_Fast Charging Data Cable_Type-c To Type-c_60W_1.2M_Black_S-A14</p>
+        <div class="prow">
+          <span class="price">175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Fast Charging Data Cable_Type-c TO Lightning_30W_1.2M_Black_S-A14">Joyroom_Fast Charging Data Cable_Type-c TO Lightning_30W_1.2M_Black_S-A14</p>
+        <div class="prow">
+          <span class="price">1,800 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Power Bank_22.5W  Magnetic_10000mAh_With Ring Holder _Black_JR-PBM12">Joyroom_Power Bank_22.5W  Magnetic_10000mAh_With Ring Holder _Black_JR-PBM12</p>
+        <div class="prow">
+          <span class="price">1,600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Mobile_Lavvento_Dual USB_MP106_Black">Charger Mobile_Lavvento_Dual USB_MP106_Black</p>
+        <div class="prow">
+          <span class="price">1,125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Mobile_Lavvento_Type C_MP467">Charger Mobile_Lavvento_Type C_MP467</p>
+        <div class="prow">
+          <span class="price">1,600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📱</div>
+      <div class="cbody">
+        <p class="pname" title="Joyroom_Earphones_Type-c wired_White_JR-EC05">Joyroom_Earphones_Type-c wired_White_JR-EC05</p>
+        <div class="prow">
+          <span class="price">325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat4" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🔌</span>
-        <h2>Cables & Converters</h2><span class="catar">— كابلات ووصلات</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Cables & Converters</h2>
+        <span class="catar">— كابلات ووصلات</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Convertor_ Display TO HDMI">Cable_Convertor_ Display TO HDMI</p>
-            <div class="prow">
-              <span class="price">575 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Convertor_ Display TO VGA">Cable_Convertor_ Display TO VGA</p>
-            <div class="prow">
-              <span class="price">1,125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Convertor_ Mobile Micro TO MHL">Cable_Convertor_ Mobile Micro TO MHL</p>
-            <div class="prow">
-              <span class="price">250 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Convertor_HDMI Micro TO HDMI Female">Convertor_HDMI Micro TO HDMI Female</p>
-            <div class="prow">
-              <span class="price">1,375 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Data _Camera_Premium _RG6_بالمتر">Cable_Data _Camera_Premium _RG6_بالمتر</p>
-            <div class="prow">
-              <span class="price">575 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Audio/Video_3*1_Original_1.5M">Cable_Audio/Video_3*1_Original_1.5M</p>
-            <div class="prow">
-              <span class="price">800 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Audio/Video_3*3_Original_1.5M">Cable_Audio/Video_3*3_Original_1.5M</p>
-            <div class="prow">
-              <span class="price">850 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔌</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Audio_2*1_Original 10M">Cable_Audio_2*1_Original 10M</p>
-            <div class="prow">
-              <span class="price">2,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Convertor_ Display TO HDMI">Cable_Convertor_ Display TO HDMI</p>
+        <div class="prow">
+          <span class="price">575 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Convertor_ Display TO VGA">Cable_Convertor_ Display TO VGA</p>
+        <div class="prow">
+          <span class="price">1,125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Convertor_ Mobile Micro TO MHL">Cable_Convertor_ Mobile Micro TO MHL</p>
+        <div class="prow">
+          <span class="price">250 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Convertor_HDMI Micro TO HDMI Female">Convertor_HDMI Micro TO HDMI Female</p>
+        <div class="prow">
+          <span class="price">1,375 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Data _Camera_Premium _RG6_بالمتر">Cable_Data _Camera_Premium _RG6_بالمتر</p>
+        <div class="prow">
+          <span class="price">575 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Audio/Video_3*1_Original_1.5M">Cable_Audio/Video_3*1_Original_1.5M</p>
+        <div class="prow">
+          <span class="price">800 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Audio/Video_3*3_Original_1.5M">Cable_Audio/Video_3*3_Original_1.5M</p>
+        <div class="prow">
+          <span class="price">850 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔌</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Audio_2*1_Original 10M">Cable_Audio_2*1_Original 10M</p>
+        <div class="prow">
+          <span class="price">2,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat5" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🔋</span>
-        <h2>Power & Charging</h2><span class="catar">— طاقة وشحن</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Power & Charging</h2>
+        <span class="catar">— طاقة وشحن</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Atick_USB-TO-I Phone + Charger Car">Cable_Atick_USB-TO-I Phone + Charger Car</p>
-            <div class="prow">
-              <span class="price">1,075 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Car_2B_MX-315_2.1A_Dual USB">Charger Car_2B_MX-315_2.1A_Dual USB</p>
-            <div class="prow">
-              <span class="price">1,000 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Car_2B_MX-316_2.1A">Charger Car_2B_MX-316_2.1A</p>
-            <div class="prow">
-              <span class="price">250 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Car_Devia_MX-50W_2 USB_2.4A">Charger Car_Devia_MX-50W_2 USB_2.4A</p>
-            <div class="prow">
-              <span class="price">525 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Car_not3_1.5A">Charger Car_not3_1.5A</p>
-            <div class="prow">
-              <span class="price">150 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Network_12V-1 A">Charger Network_12V-1 A</p>
-            <div class="prow">
-              <span class="price">1,600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Network_12V-2 A">Charger Network_12V-2 A</p>
-            <div class="prow">
-              <span class="price">1,625 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🔋</div>
-          <div class="cbody">
-            <p class="pname" title="Charger Network_12V-5A">Charger Network_12V-5A</p>
-            <div class="prow">
-              <span class="price">900 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Atick_USB-TO-I Phone + Charger Car">Cable_Atick_USB-TO-I Phone + Charger Car</p>
+        <div class="prow">
+          <span class="price">1,075 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Car_2B_MX-315_2.1A_Dual USB">Charger Car_2B_MX-315_2.1A_Dual USB</p>
+        <div class="prow">
+          <span class="price">1,000 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Car_2B_MX-316_2.1A">Charger Car_2B_MX-316_2.1A</p>
+        <div class="prow">
+          <span class="price">250 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Car_Devia_MX-50W_2 USB_2.4A">Charger Car_Devia_MX-50W_2 USB_2.4A</p>
+        <div class="prow">
+          <span class="price">525 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Car_not3_1.5A">Charger Car_not3_1.5A</p>
+        <div class="prow">
+          <span class="price">150 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Network_12V-1 A">Charger Network_12V-1 A</p>
+        <div class="prow">
+          <span class="price">1,600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Network_12V-2 A">Charger Network_12V-2 A</p>
+        <div class="prow">
+          <span class="price">1,625 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🔋</div>
+      <div class="cbody">
+        <p class="pname" title="Charger Network_12V-5A">Charger Network_12V-5A</p>
+        <div class="prow">
+          <span class="price">900 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat6" class="catsec">
       <div class="cathead">
         <span class="cat-icon">📶</span>
-        <h2>Network</h2><span class="catar">— شبكات</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Network</h2>
+        <span class="catar">— شبكات</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="Acsses Point_D Link_DAP-1360_N300_2 Antenna">Acsses Point_D Link_DAP-1360_N300_2 Antenna</p>
-            <div class="prow">
-              <span class="price">325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="Acsses point_LG_Originel_Nano_6000_2 Antenna">Acsses point_LG_Originel_Nano_6000_2 Antenna</p>
-            <div class="prow">
-              <span class="price">1,825 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Router_Archer VR400_4 Port_2 Antena">TP Link_Router_Archer VR400_4 Port_2 Antena</p>
-            <div class="prow">
-              <span class="price">1,525 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Router_Archer VR600_4 Port _3 Antena">TP Link_Router_Archer VR600_4 Port _3 Antena</p>
-            <div class="prow">
-              <span class="price">150 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses point_TL-WA801ND_ 2 Antena">TP Link_Acsses point_TL-WA801ND_ 2 Antena</p>
-            <div class="prow">
-              <span class="price">725 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses point_TL-WA901ND_ 3 Antena">TP Link_Acsses point_TL-WA901ND_ 3 Antena</p>
-            <div class="prow">
-              <span class="price">775 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses Point_TL-WR840N-2 Antena">TP Link_Acsses Point_TL-WR840N-2 Antena</p>
-            <div class="prow">
-              <span class="price">1,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📶</div>
-          <div class="cbody">
-            <p class="pname" title="Card Lan_edimax_N 150_USB-Nano-7811 - Network CARD LAN">Card Lan_edimax_N 150_USB-Nano-7811 - Network CARD LAN</p>
-            <div class="prow">
-              <span class="price">2,100 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="Acsses Point_D Link_DAP-1360_N300_2 Antenna">Acsses Point_D Link_DAP-1360_N300_2 Antenna</p>
+        <div class="prow">
+          <span class="price">325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="Acsses point_LG_Originel_Nano_6000_2 Antenna">Acsses point_LG_Originel_Nano_6000_2 Antenna</p>
+        <div class="prow">
+          <span class="price">1,825 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Router_Archer VR400_4 Port_2 Antena">TP Link_Router_Archer VR400_4 Port_2 Antena</p>
+        <div class="prow">
+          <span class="price">1,525 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Router_Archer VR600_4 Port _3 Antena">TP Link_Router_Archer VR600_4 Port _3 Antena</p>
+        <div class="prow">
+          <span class="price">150 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses point_TL-WA801ND_ 2 Antena">TP Link_Acsses point_TL-WA801ND_ 2 Antena</p>
+        <div class="prow">
+          <span class="price">725 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses point_TL-WA901ND_ 3 Antena">TP Link_Acsses point_TL-WA901ND_ 3 Antena</p>
+        <div class="prow">
+          <span class="price">775 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses Point_TL-WR840N-2 Antena">TP Link_Acsses Point_TL-WR840N-2 Antena</p>
+        <div class="prow">
+          <span class="price">1,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📶</div>
+      <div class="cbody">
+        <p class="pname" title="Card Lan_edimax_N 150_USB-Nano-7811 - Network CARD LAN">Card Lan_edimax_N 150_USB-Nano-7811 - Network CARD LAN</p>
+        <div class="prow">
+          <span class="price">2,100 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat7" class="catsec new-cat">
       <div class="cathead">
         <span class="cat-icon">📷</span>
-        <h2>WiFi Cameras</h2><span class="catar">— كاميرات واي فاي</span><span class="new-badge">New</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>WiFi Cameras</h2>
+        <span class="catar">— كاميرات واي فاي</span>
+        <span class="new-badge">New</span>
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="Camera_ZERO_IP_In Door_WIFI_ZVC-1321Z-IP_2MP_3.6MM">Camera_ZERO_IP_In Door_WIFI_ZVC-1321Z-IP_2MP_3.6MM</p>
-            <div class="prow">
-              <span class="price">1,675 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="Imou_Wifi_Ranger 2_IPC_K2EP-3H1W_3MP_3.6MM">Imou_Wifi_Ranger 2_IPC_K2EP-3H1W_3MP_3.6MM</p>
-            <div class="prow">
-              <span class="price">1,350 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_wifi_IPC-K2MP-5H1WE Cruiser SE Plus 360 Degree_5MP">IMOU_wifi_IPC-K2MP-5H1WE Cruiser SE Plus 360 Degree_5MP</p>
-            <div class="prow">
-              <span class="price">1,325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_Wifi_IPC-S7XEP-6M0WED-0360B_Cruiser Dual 2_6MP">IMOU_Wifi_IPC-S7XEP-6M0WED-0360B_Cruiser Dual 2_6MP</p>
-            <div class="prow">
-              <span class="price">1,900 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_Wifi_ RANGER 2/IPC-K2EP-5H2W_5MP">IMOU_Wifi_ RANGER 2/IPC-K2EP-5H2W_5MP</p>
-            <div class="prow">
-              <span class="price">1,425 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_Wifi_Cruiser SC IPC-K7FP-3H0WE_3MP">IMOU_Wifi_Cruiser SC IPC-K7FP-3H0WE_3MP</p>
-            <div class="prow">
-              <span class="price">375 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_wifi_Cell 3C All in One IPC-K9DCP-3T0WE-V2_3MP">IMOU_wifi_Cell 3C All in One IPC-K9DCP-3T0WE-V2_3MP</p>
-            <div class="prow">
-              <span class="price">2,200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_Wifi_IPC-K7FP-5H0WE_Cruiser SC_5MP">IMOU_Wifi_IPC-K7FP-5H0WE_Cruiser SC_5MP</p>
-            <div class="prow">
-              <span class="price">2,050 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📷</div>
-          <div class="cbody">
-            <p class="pname" title="IMOU_Wifi_IPC-K3DP-3H0WF BULLET 2E_3MP">IMOU_Wifi_IPC-K3DP-3H0WF BULLET 2E_3MP</p>
-            <div class="prow">
-              <span class="price">1,550 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="Camera_ZERO_IP_In Door_WIFI_ZVC-1321Z-IP_2MP_3.6MM">Camera_ZERO_IP_In Door_WIFI_ZVC-1321Z-IP_2MP_3.6MM</p>
+        <div class="prow">
+          <span class="price">1,675 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="Imou_Wifi_Ranger 2_IPC_K2EP-3H1W_3MP_3.6MM">Imou_Wifi_Ranger 2_IPC_K2EP-3H1W_3MP_3.6MM</p>
+        <div class="prow">
+          <span class="price">1,350 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_wifi_IPC-K2MP-5H1WE Cruiser SE Plus 360 Degree_5MP">IMOU_wifi_IPC-K2MP-5H1WE Cruiser SE Plus 360 Degree_5MP</p>
+        <div class="prow">
+          <span class="price">1,325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_Wifi_IPC-S7XEP-6M0WED-0360B_Cruiser Dual 2_6MP">IMOU_Wifi_IPC-S7XEP-6M0WED-0360B_Cruiser Dual 2_6MP</p>
+        <div class="prow">
+          <span class="price">1,900 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_Wifi_ RANGER 2/IPC-K2EP-5H2W_5MP">IMOU_Wifi_ RANGER 2/IPC-K2EP-5H2W_5MP</p>
+        <div class="prow">
+          <span class="price">1,425 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_Wifi_Cruiser SC IPC-K7FP-3H0WE_3MP">IMOU_Wifi_Cruiser SC IPC-K7FP-3H0WE_3MP</p>
+        <div class="prow">
+          <span class="price">375 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_wifi_Cell 3C All in One IPC-K9DCP-3T0WE-V2_3MP">IMOU_wifi_Cell 3C All in One IPC-K9DCP-3T0WE-V2_3MP</p>
+        <div class="prow">
+          <span class="price">2,200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_Wifi_IPC-K7FP-5H0WE_Cruiser SC_5MP">IMOU_Wifi_IPC-K7FP-5H0WE_Cruiser SC_5MP</p>
+        <div class="prow">
+          <span class="price">2,050 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📷</div>
+      <div class="cbody">
+        <p class="pname" title="IMOU_Wifi_IPC-K3DP-3H0WF BULLET 2E_3MP">IMOU_Wifi_IPC-K3DP-3H0WF BULLET 2E_3MP</p>
+        <div class="prow">
+          <span class="price">1,550 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat8" class="catsec">
       <div class="cathead">
         <span class="cat-icon">💾</span>
-        <h2>Storage & Memory</h2><span class="catar">— تخزين وذاكرة</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Storage & Memory</h2>
+        <span class="catar">— تخزين وذاكرة</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Mobile Rack_2.5 Sata_Samsung_54005_كارتون صغير">Mobile Rack_2.5 Sata_Samsung_54005_كارتون صغير</p>
-            <div class="prow">
-              <span class="price">725 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Mobile Rack_2.5 Sata_Samsung_USB 3">Mobile Rack_2.5 Sata_Samsung_USB 3</p>
-            <div class="prow">
-              <span class="price">1,300 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Mobile Rack_2.5 Sata_USB 0.3_WD_Carton">Mobile Rack_2.5 Sata_USB 0.3_WD_Carton</p>
-            <div class="prow">
-              <span class="price">175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Mobile Rack_Caddy_For SSD_Normal_12.7">Mobile Rack_Caddy_For SSD_Normal_12.7</p>
-            <div class="prow">
-              <span class="price">625 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Mobile Rack_M2_Sata_NCS">Mobile Rack_M2_Sata_NCS</p>
-            <div class="prow">
-              <span class="price">1,875 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Ram_1G/1333_DR3_NB_Original">Ram_1G/1333_DR3_NB_Original</p>
-            <div class="prow">
-              <span class="price">1,200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Ram_1G/800_DR2_NB_Original">Ram_1G/800_DR2_NB_Original</p>
-            <div class="prow">
-              <span class="price">2,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">💾</div>
-          <div class="cbody">
-            <p class="pname" title="Ram_2G/1333_DR3_NB_Original">Ram_2G/1333_DR3_NB_Original</p>
-            <div class="prow">
-              <span class="price">1,225 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Mobile Rack_2.5 Sata_Samsung_54005_كارتون صغير">Mobile Rack_2.5 Sata_Samsung_54005_كارتون صغير</p>
+        <div class="prow">
+          <span class="price">725 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Mobile Rack_2.5 Sata_Samsung_USB 3">Mobile Rack_2.5 Sata_Samsung_USB 3</p>
+        <div class="prow">
+          <span class="price">1,300 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Mobile Rack_2.5 Sata_USB 0.3_WD_Carton">Mobile Rack_2.5 Sata_USB 0.3_WD_Carton</p>
+        <div class="prow">
+          <span class="price">175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Mobile Rack_Caddy_For SSD_Normal_12.7">Mobile Rack_Caddy_For SSD_Normal_12.7</p>
+        <div class="prow">
+          <span class="price">625 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Mobile Rack_M2_Sata_NCS">Mobile Rack_M2_Sata_NCS</p>
+        <div class="prow">
+          <span class="price">1,875 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Ram_1G/1333_DR3_NB_Original">Ram_1G/1333_DR3_NB_Original</p>
+        <div class="prow">
+          <span class="price">1,200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Ram_1G/800_DR2_NB_Original">Ram_1G/800_DR2_NB_Original</p>
+        <div class="prow">
+          <span class="price">2,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">💾</div>
+      <div class="cbody">
+        <p class="pname" title="Ram_2G/1333_DR3_NB_Original">Ram_2G/1333_DR3_NB_Original</p>
+        <div class="prow">
+          <span class="price">1,225 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat9" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🎒</span>
-        <h2>Bags</h2><span class="catar">— شنط وحقائب</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Bags</h2>
+        <span class="catar">— شنط وحقائب</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_Eden_Slim">BAG Lap_Eden_Slim</p>
-            <div class="prow">
-              <span class="price">1,475 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_Egint_Anti Theft 2_Back">BAG Lap_Egint_Anti Theft 2_Back</p>
-            <div class="prow">
-              <span class="price">2,200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-720_Back">BAG Lap_E Train_BG-720_Back</p>
-            <div class="prow">
-              <span class="price">1,350 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-731_Back">BAG Lap_E Train_BG-731_Back</p>
-            <div class="prow">
-              <span class="price">1,400 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-732_Back">BAG Lap_E Train_BG-732_Back</p>
-            <div class="prow">
-              <span class="price">1,425 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-742_Back">BAG Lap_E Train_BG-742_Back</p>
-            <div class="prow">
-              <span class="price">1,450 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-761_Back">BAG Lap_E Train_BG-761_Back</p>
-            <div class="prow">
-              <span class="price">1,475 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🎒</div>
-          <div class="cbody">
-            <p class="pname" title="BAG Lap_E Train_BG-80L">BAG Lap_E Train_BG-80L</p>
-            <div class="prow">
-              <span class="price">1,675 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_Eden_Slim">BAG Lap_Eden_Slim</p>
+        <div class="prow">
+          <span class="price">1,475 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_Egint_Anti Theft 2_Back">BAG Lap_Egint_Anti Theft 2_Back</p>
+        <div class="prow">
+          <span class="price">2,200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-720_Back">BAG Lap_E Train_BG-720_Back</p>
+        <div class="prow">
+          <span class="price">1,350 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-731_Back">BAG Lap_E Train_BG-731_Back</p>
+        <div class="prow">
+          <span class="price">1,400 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-732_Back">BAG Lap_E Train_BG-732_Back</p>
+        <div class="prow">
+          <span class="price">1,425 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-742_Back">BAG Lap_E Train_BG-742_Back</p>
+        <div class="prow">
+          <span class="price">1,450 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-761_Back">BAG Lap_E Train_BG-761_Back</p>
+        <div class="prow">
+          <span class="price">1,475 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🎒</div>
+      <div class="cbody">
+        <p class="pname" title="BAG Lap_E Train_BG-80L">BAG Lap_E Train_BG-80L</p>
+        <div class="prow">
+          <span class="price">1,675 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat10" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🧾</span>
-        <h2>POS</h2><span class="catar">— نقاط البيع</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>POS</h2>
+        <span class="catar">— نقاط البيع</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Printer_Barcode_Xprinter_XP-365B">Printer_Barcode_Xprinter_XP-365B</p>
-            <div class="prow">
-              <span class="price">1,125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Printer_Receipt_Hoin_HOP-E801">Printer_Receipt_Hoin_HOP-E801</p>
-            <div class="prow">
-              <span class="price">800 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_Data Logic_2100">Scanner_Barcode_Data Logic_2100</p>
-            <div class="prow">
-              <span class="price">2,275 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_Honeywell_HH400_USB">Scanner_Barcode_Honeywell_HH400_USB</p>
-            <div class="prow">
-              <span class="price">600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_Data Logic_WL">Scanner_Barcode_Data Logic_WL</p>
-            <div class="prow">
-              <span class="price">1,475 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_SIMML_NS021">Scanner_Barcode_SIMML_NS021</p>
-            <div class="prow">
-              <span class="price">1,150 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_ADVISION_2D_2200_W">Scanner_Barcode_ADVISION_2D_2200_W</p>
-            <div class="prow">
-              <span class="price">200 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🧾</div>
-          <div class="cbody">
-            <p class="pname" title="Scanner_Barcode_ADVISION_2100_2D">Scanner_Barcode_ADVISION_2100_2D</p>
-            <div class="prow">
-              <span class="price">125 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Printer_Barcode_Xprinter_XP-365B">Printer_Barcode_Xprinter_XP-365B</p>
+        <div class="prow">
+          <span class="price">1,125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Printer_Receipt_Hoin_HOP-E801">Printer_Receipt_Hoin_HOP-E801</p>
+        <div class="prow">
+          <span class="price">800 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_Data Logic_2100">Scanner_Barcode_Data Logic_2100</p>
+        <div class="prow">
+          <span class="price">2,275 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_Honeywell_HH400_USB">Scanner_Barcode_Honeywell_HH400_USB</p>
+        <div class="prow">
+          <span class="price">600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_Data Logic_WL">Scanner_Barcode_Data Logic_WL</p>
+        <div class="prow">
+          <span class="price">1,475 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_SIMML_NS021">Scanner_Barcode_SIMML_NS021</p>
+        <div class="prow">
+          <span class="price">1,150 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_ADVISION_2D_2200_W">Scanner_Barcode_ADVISION_2D_2200_W</p>
+        <div class="prow">
+          <span class="price">200 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🧾</div>
+      <div class="cbody">
+        <p class="pname" title="Scanner_Barcode_ADVISION_2100_2D">Scanner_Barcode_ADVISION_2100_2D</p>
+        <div class="prow">
+          <span class="price">125 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat11" class="catsec">
       <div class="cathead">
         <span class="cat-icon">📺</span>
-        <h2>TV & Receivers</h2><span class="catar">— تلفزيون واستقبال</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>TV & Receivers</h2>
+        <span class="catar">— تلفزيون واستقبال</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="Receiver_Prifix_8400s">Receiver_Prifix_8400s</p>
-            <div class="prow">
-              <span class="price">1,775 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="Tv Box Andriod_X96.Mini_2.G.RAM/16.G.Memory.Andriod.7">Tv Box Andriod_X96.Mini_2.G.RAM/16.G.Memory.Andriod.7</p>
-            <div class="prow">
-              <span class="price">500 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="TV Box Andriod_X96.Mini_2.G.RAM/8.G.Memory.Andriod">TV Box Andriod_X96.Mini_2.G.RAM/8.G.Memory.Andriod</p>
-            <div class="prow">
-              <span class="price">500 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="Receiver_Z Sat_ZS-8050_8060_8070_8090">Receiver_Z Sat_ZS-8050_8060_8070_8090</p>
-            <div class="prow">
-              <span class="price">1,600 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="LNB_zero_single_Z100">LNB_zero_single_Z100</p>
-            <div class="prow">
-              <span class="price">875 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="LNB_zero_single_Z101_Z102_Z103">LNB_zero_single_Z101_Z102_Z103</p>
-            <div class="prow">
-              <span class="price">1,775 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="LNB_zero_Twin_Z201_Z202_Z203">LNB_zero_Twin_Z201_Z202_Z203</p>
-            <div class="prow">
-              <span class="price">750 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">📺</div>
-          <div class="cbody">
-            <p class="pname" title="LNB_zero_Quad_Z401_Z402_Z403">LNB_zero_Quad_Z401_Z402_Z403</p>
-            <div class="prow">
-              <span class="price">325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="Receiver_Prifix_8400s">Receiver_Prifix_8400s</p>
+        <div class="prow">
+          <span class="price">1,775 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="Tv Box Andriod_X96.Mini_2.G.RAM/16.G.Memory.Andriod.7">Tv Box Andriod_X96.Mini_2.G.RAM/16.G.Memory.Andriod.7</p>
+        <div class="prow">
+          <span class="price">500 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="TV Box Andriod_X96.Mini_2.G.RAM/8.G.Memory.Andriod">TV Box Andriod_X96.Mini_2.G.RAM/8.G.Memory.Andriod</p>
+        <div class="prow">
+          <span class="price">500 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="Receiver_Z Sat_ZS-8050_8060_8070_8090">Receiver_Z Sat_ZS-8050_8060_8070_8090</p>
+        <div class="prow">
+          <span class="price">1,600 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="LNB_zero_single_Z100">LNB_zero_single_Z100</p>
+        <div class="prow">
+          <span class="price">875 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="LNB_zero_single_Z101_Z102_Z103">LNB_zero_single_Z101_Z102_Z103</p>
+        <div class="prow">
+          <span class="price">1,775 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="LNB_zero_Twin_Z201_Z202_Z203">LNB_zero_Twin_Z201_Z202_Z203</p>
+        <div class="prow">
+          <span class="price">750 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">📺</div>
+      <div class="cbody">
+        <p class="pname" title="LNB_zero_Quad_Z401_Z402_Z403">LNB_zero_Quad_Z401_Z402_Z403</p>
+        <div class="prow">
+          <span class="price">325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section><section id="cat12" class="catsec">
       <div class="cathead">
         <span class="cat-icon">🖨️</span>
-        <h2>Printers & Supplies</h2><span class="catar">— طباعة وملحقاتها</span>
-        <a class="seeall" href="#">عرض الكل <i class="ti ti-chevron-left"></i></a>
+        <h2>Printers & Supplies</h2>
+        <span class="catar">— طباعة وملحقاتها</span>
+        
+        <a class="seeall" href="#">عرض الكل ›</a>
       </div>
       <div class="grid"><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="Acsses Point_D Link_DAP-1360_N300_2 Antenna">Acsses Point_D Link_DAP-1360_N300_2 Antenna</p>
-            <div class="prow">
-              <span class="price">325 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Router_Archer VR400_4 Port_2 Antena">TP Link_Router_Archer VR400_4 Port_2 Antena</p>
-            <div class="prow">
-              <span class="price">1,525 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Router_Archer VR600_4 Port _3 Antena">TP Link_Router_Archer VR600_4 Port _3 Antena</p>
-            <div class="prow">
-              <span class="price">150 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses point_TL-WA801ND_ 2 Antena">TP Link_Acsses point_TL-WA801ND_ 2 Antena</p>
-            <div class="prow">
-              <span class="price">725 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses point_TL-WA901ND_ 3 Antena">TP Link_Acsses point_TL-WA901ND_ 3 Antena</p>
-            <div class="prow">
-              <span class="price">775 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Acsses Point_TL-WR840N-2 Antena">TP Link_Acsses Point_TL-WR840N-2 Antena</p>
-            <div class="prow">
-              <span class="price">1,175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="Cable_Data_AP-LINK_Fiber Optic_5M">Cable_Data_AP-LINK_Fiber Optic_5M</p>
-            <div class="prow">
-              <span class="price">175 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div><div class="card">
-          <div class="thumb">🖨️</div>
-          <div class="cbody">
-            <p class="pname" title="TP Link_Card Lan_TL-WN725N_USB">TP Link_Card Lan_TL-WN725N_USB</p>
-            <div class="prow">
-              <span class="price">1,925 <span class="cur">جنيه</span></span>
-              <button class="add"><i class="ti ti-shopping-cart-plus"></i></button>
-            </div>
-          </div>
-        </div></div>
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="Acsses Point_D Link_DAP-1360_N300_2 Antenna">Acsses Point_D Link_DAP-1360_N300_2 Antenna</p>
+        <div class="prow">
+          <span class="price">325 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Router_Archer VR400_4 Port_2 Antena">TP Link_Router_Archer VR400_4 Port_2 Antena</p>
+        <div class="prow">
+          <span class="price">1,525 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Router_Archer VR600_4 Port _3 Antena">TP Link_Router_Archer VR600_4 Port _3 Antena</p>
+        <div class="prow">
+          <span class="price">150 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses point_TL-WA801ND_ 2 Antena">TP Link_Acsses point_TL-WA801ND_ 2 Antena</p>
+        <div class="prow">
+          <span class="price">725 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses point_TL-WA901ND_ 3 Antena">TP Link_Acsses point_TL-WA901ND_ 3 Antena</p>
+        <div class="prow">
+          <span class="price">775 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Acsses Point_TL-WR840N-2 Antena">TP Link_Acsses Point_TL-WR840N-2 Antena</p>
+        <div class="prow">
+          <span class="price">1,175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="Cable_Data_AP-LINK_Fiber Optic_5M">Cable_Data_AP-LINK_Fiber Optic_5M</p>
+        <div class="prow">
+          <span class="price">175 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div><div class="card">
+      <div class="thumb">🖨️</div>
+      <div class="cbody">
+        <p class="pname" title="TP Link_Card Lan_TL-WN725N_USB">TP Link_Card Lan_TL-WN725N_USB</p>
+        <div class="prow">
+          <span class="price">1,925 <span class="cur">جنيه</span></span>
+          <button class="add">+</button>
+        </div>
+      </div>
+    </div></div>
     </section></div>
+
 <footer><div class="foot-inner">
   <div class="foot-logo"><img src="logo.png" alt="Al Masa Stores"></div>
   <div class="foot-copy">© 2026 <span>Al Masa Stores</span> — جميع الحقوق محفوظة</div>
 </div></footer>
+
 </body></html>
